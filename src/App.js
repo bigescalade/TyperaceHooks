@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import Typerace from './views/Typerace';
+import Main from './views/Main';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Typerace />
+        <Main />
       </div>
     );
   }
