@@ -51,7 +51,11 @@ A simple Typerace game utilising React Hooks.
 
 # Discussion
 
-N/A
+### Todos
+
+- mobile responsive
+- implement styled-components
+- refactor hooks
 
 # License
 
