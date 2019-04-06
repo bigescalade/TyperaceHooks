@@ -8,17 +8,32 @@ const TyperaceHook = () => {
     if (gameState.victory) document.title = 'Victory!';
   });
 
-  const INITIAL_GAME_STATE = { victory: false, startTime: null, endTime: null };
+  const INITIAL_GAME_STATE = {
+    endTime: null,
+    isPlaying: false,
+    startTime: null,
+    victory: false
+  };
+
+  const INITIAL_TEXT_STATE = '';
 
   const [gameState, setGameState] = useState(INITIAL_GAME_STATE);
   const [snippet, setSnippet] = useState('');
-  const [text, setText] = useState('');
+  const [text, setText] = useState(INITIAL_TEXT_STATE);
 
   // double arrow syntax sets up chooseSnippet to return a callback function
   const chooseSnippet = snippetIndex => () => {
-    console.log('setSnippet', snippetIndex);
     setSnippet(SNIPPETS[snippetIndex]);
-    setGameState({ ...gameState, startTime: new Date().getTime() });
+    setGameState({
+      ...gameState,
+      isPlaying: true,
+      startTime: new Date().getTime()
+    });
+  };
+
+  const resetState = () => {
+    setGameState({ INITIAL_GAME_STATE });
+    setText(INITIAL_TEXT_STATE);
   };
 
   const updateText = event => {
@@ -37,6 +52,7 @@ const TyperaceHook = () => {
     <Typerace
       chooseSnippet={chooseSnippet}
       gameState={gameState}
+      resetState={resetState}
       snippet={snippet}
       text={text}
       updateText={updateText}
