@@ -8,7 +8,7 @@ const Input = props => {
       autoComplete="off"
       autoFocus
       className="Input"
-      id="typeraceInput"
+      id={props.id}
       onChange={props.onChange}
       value={props.value}
     />
