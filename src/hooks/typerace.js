@@ -5,7 +5,11 @@ import SNIPPETS from '../helpers/snippets';
 
 const TyperaceHook = () => {
   useEffect(() => {
-    if (gameState.victory) document.title = 'Victory!';
+    if (gameState.victory) {
+      document.title = 'Victory!';
+    } else {
+      document.title = 'Typerace';
+    }
   });
 
   const INITIAL_GAME_STATE = {
