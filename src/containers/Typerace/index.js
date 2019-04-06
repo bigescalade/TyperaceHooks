@@ -5,6 +5,7 @@ import Input from '../../components/Input';
 import Heading from '../../components/Text/heading';
 import Subheading from '../../components/Text/subheading';
 import Text from '../../components/Text/text';
+import msconverter from '../../helpers/msconverter';
 import SNIPPETS from '../../helpers/snippets';
 import './styles.css';
 
@@ -46,7 +47,11 @@ const Typerace = props => {
         <div className="VictoryContainer">
           <h4>
             {gameState.victory ? (
-              <Text text={`🎉 You win! Time: ${gameState.endTime}ms 🎉`} />
+              <Text
+                text={`🎉 Victory! Time taken: ${msconverter(
+                  gameState.endTime
+                )} ${gameState.endTime < 60000 && 'seconds'} 🎉`}
+              />
             ) : null}
           </h4>
           <Button onClick={resetState} text="Play again" />
