@@ -1,7 +1,29 @@
+.Centered {
+  text-align: center;
+}
+
 .Heading {
-  font-size: 2rem;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 4rem;
+  margin-bottom: 30px;
 }
 
 .Subheading {
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.Text {
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
