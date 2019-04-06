@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './styles.css';
+
 const Input = props => {
   window.onload = () => {
     console.log('onload');
@@ -11,7 +13,12 @@ const Input = props => {
   };
 
   return (
-    <input id="typeraceInput" onChange={props.onChange} value={props.value} />
+    <input
+      className="Input"
+      id="typeraceInput"
+      onChange={props.onChange}
+      value={props.value}
+    />
   );
 };
 

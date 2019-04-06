@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import TyperaceHook from '../../hooks/Typerace';
+import TyperaceHook from '../../hooks/typerace';
 import './styles.css';
 
 class Typerace extends Component {

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import Input from '../../components/Input';
-import SNIPPETS from '../../helpers/snippets';
-import './styles.css';
+import Typerace from '../containers/Typerace';
+import SNIPPETS from '../helpers/snippets';
 
 const TyperaceHook = () => {
   useEffect(() => {
@@ -35,21 +34,13 @@ const TyperaceHook = () => {
   };
 
   return (
-    <div className="TyperaceContainer">
-      <h3>Snippet</h3>
-      {snippet}
-      <h4>
-        {gameState.victory ? `Done! 🎉 Time: ${gameState.endTime}ms` : null}
-      </h4>
-      <Input id="typeraceInput" onChange={updateText} value={text} />
-      <div>
-        {SNIPPETS.map((SNIPPET, index) => (
-          <button onClick={chooseSnippet(index)} key={index}>
-            {SNIPPET.substring(0, 10)}...
-          </button>
-        ))}
-      </div>
-    </div>
+    <Typerace
+      chooseSnippet={chooseSnippet}
+      gameState={gameState}
+      snippet={snippet}
+      text={text}
+      updateText={updateText}
+    />
   );
 };
 
