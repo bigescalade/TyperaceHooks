@@ -2,7 +2,9 @@ import React from 'react';
 
 import Button from '../../components/Button';
 import Input from '../../components/Input';
+import Heading from '../../components/Text/heading';
 import Subheading from '../../components/Text/subheading';
+import Text from '../../components/Text/text';
 import SNIPPETS from '../../helpers/snippets';
 import './styles.css';
 
@@ -17,20 +19,18 @@ const Typerace = props => {
   } = props;
   return (
     <div className="TyperaceContainer">
+      <Heading
+        center={!gameState.isPlaying}
+        text={!gameState.isPlaying ? 'Typerace' : 'START TYPING:'}
+      />
       {gameState.isPlaying ? (
         <React.Fragment>
-          <Subheading text="Snippet" />
-          {snippet}
+          <Text text={snippet} />
           <Input id="typeraceInput" onChange={updateText} value={text} />
-          <h4>
-            {gameState.victory
-              ? alert(`Done! 🎉 Time: ${gameState.endTime}ms`)
-              : null}
-          </h4>
         </React.Fragment>
       ) : (
         <div className="SnippetContainer">
-          <Subheading text="Select a snippet" />
+          <Subheading text="Select a race" />
           <div className="ButtonsContainer">
             {SNIPPETS.map((SNIPPET, index) => (
               <Button
@@ -42,7 +42,16 @@ const Typerace = props => {
           </div>
         </div>
       )}
-      {gameState.victory && <Button onClick={resetState} text="Play again" />}
+      {gameState.victory && (
+        <div className="VictoryContainer">
+          <h4>
+            {gameState.victory ? (
+              <Text text={`🎉 You win! Time: ${gameState.endTime}ms 🎉`} />
+            ) : null}
+          </h4>
+          <Button onClick={resetState} text="Play again" />
+        </div>
+      )}
     </div>
   );
 };

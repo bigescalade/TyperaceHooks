@@ -1,8 +1,8 @@
 .ButtonsContainer {
   display: flex;
   justify-content: space-around;
-  margin-top: 10px;
-  width: 50%;
+  margin-top: 30px;
+  width: 80%;
 }
 
 .SnippetContainer {
@@ -18,4 +18,10 @@
   flex-direction: column;
   width: 50%;
   max-width: 800px;
+}
+
+.VictoryContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
