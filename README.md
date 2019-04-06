@@ -2,7 +2,8 @@
 
 ## TyperaceHooks
 
-A simple Typerace game utilising React Hooks. Original idea/tutorial can be found [here](https://medium.com/@dtkatz/react-hooks-tutorial-learn-by-building-b90ec4db2b8e).
+A simple Typerace game utilising React Hooks. [Play typerace!](https://typerace.netlify.com/) <br>
+Original idea/tutorial can be [found here](https://medium.com/@dtkatz/react-hooks-tutorial-learn-by-building-b90ec4db2b8e).
 
 # Table of Contents
 
