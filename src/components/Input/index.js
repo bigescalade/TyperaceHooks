@@ -6,6 +6,7 @@ const Input = props => {
   return (
     <input
       autoComplete="off"
+      autoFocus
       className="Input"
       id="typeraceInput"
       onChange={props.onChange}
