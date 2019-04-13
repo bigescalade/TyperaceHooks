@@ -1,9 +1,6 @@
 import React from 'react';
 
-import Button from '../../components/Button';
 import Heading from '../../components/Text/heading';
-import Text from '../../components/Text/text';
-import msconverter from '../../helpers/msconverter';
 
 import Play from './Play';
 import Start from './Start';
