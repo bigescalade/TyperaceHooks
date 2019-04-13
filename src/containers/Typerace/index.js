@@ -7,6 +7,7 @@ import msconverter from '../../helpers/msconverter';
 
 import Play from './Play';
 import Start from './Start';
+import Victory from './Victory';
 import './styles.css';
 
 class Typerace extends React.Component {
@@ -41,14 +42,7 @@ class Typerace extends React.Component {
           <Play snippet={snippet} text={text} updateText={updateText} />
         )}
         {gameState.victory && (
-          <div className="VictoryContainer">
-            <Text
-              text={`🎉 Victory! Time taken: ${msconverter(
-                gameState.endTime
-              )} ${gameState.endTime < 60000 && 'seconds'} 🎉`}
-            />
-            <Button onClick={resetState} text="Play again" />
-          </div>
+          <Victory gameState={gameState} resetState={resetState} />
         )}
       </div>
     );
