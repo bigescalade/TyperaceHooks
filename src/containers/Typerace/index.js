@@ -46,6 +46,7 @@ class Typerace extends React.Component {
             <div className="ButtonsContainer">
               {SNIPPETS.map((SNIPPET, index) => (
                 <Button
+                  className="Button"
                   key={`button_${index.toString()}`}
                   onClick={chooseSnippet(index)}
                   text={`${SNIPPET.substring(0, 10)}...`}
@@ -56,15 +57,13 @@ class Typerace extends React.Component {
         )}
         {gameState.victory && (
           <div className="VictoryContainer">
-            <h4>
-              {gameState.victory ? (
-                <Text
-                  text={`🎉 Victory! Time taken: ${msconverter(
-                    gameState.endTime
-                  )} ${gameState.endTime < 60000 && 'seconds'} 🎉`}
-                />
-              ) : null}
-            </h4>
+            {gameState.victory ? (
+              <Text
+                text={`🎉 Victory! Time taken: ${msconverter(
+                  gameState.endTime
+                )} ${gameState.endTime < 60000 && 'seconds'} 🎉`}
+              />
+            ) : null}
             <Button onClick={resetState} text="Play again" />
           </div>
         )}
