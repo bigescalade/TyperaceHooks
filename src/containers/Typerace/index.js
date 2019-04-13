@@ -57,13 +57,11 @@ class Typerace extends React.Component {
         )}
         {gameState.victory && (
           <div className="VictoryContainer">
-            {gameState.victory ? (
-              <Text
-                text={`🎉 Victory! Time taken: ${msconverter(
-                  gameState.endTime
-                )} ${gameState.endTime < 60000 && 'seconds'} 🎉`}
-              />
-            ) : null}
+            <Text
+              text={`🎉 Victory! Time taken: ${msconverter(
+                gameState.endTime
+              )} ${gameState.endTime < 60000 && 'seconds'} 🎉`}
+            />
             <Button onClick={resetState} text="Play again" />
           </div>
         )}
