@@ -36,7 +36,12 @@ class Typerace extends React.Component {
         {!gameState.isPlaying ? (
           <Start chooseSnippet={chooseSnippet} />
         ) : (
-          <Play snippet={snippet} text={text} updateText={updateText} />
+          <Play
+            snippet={snippet}
+            text={text}
+            updateText={updateText}
+            valid={gameState.isValid}
+          />
         )}
         {gameState.victory && (
           <Victory gameState={gameState} resetState={resetState} />

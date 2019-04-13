@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.Error {
+  color: red !important;
+}
+
 .Heading {
   color: #333;
   font-family: 'Open Sans', sans-serif;
