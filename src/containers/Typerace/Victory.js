@@ -11,9 +11,9 @@ const Victory = props => {
   return (
     <div className="VictoryContainer">
       <Text
-        text={`🎉 Victory! Time taken: ${msconverter(
-          gameState.endTime
-        )} ${gameState.endTime < 60000 && 'seconds'} 🎉`}
+        text={`🎉 Victory! Time taken: ${msconverter(gameState.endTime)} ${
+          gameState.endTime < 60000 ? 'seconds' : ''
+        } 🎉`}
       />
       <Button onClick={resetState} text="Play again" />
     </div>
