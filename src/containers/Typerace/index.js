@@ -7,6 +7,7 @@ import Subheading from '../../components/Text/subheading';
 import Text from '../../components/Text/text';
 import msconverter from '../../helpers/msconverter';
 import SNIPPETS from '../../helpers/snippets';
+import Start from './Start';
 import './styles.css';
 
 class Typerace extends React.Component {
@@ -41,19 +42,7 @@ class Typerace extends React.Component {
             <Input id="typeraceInput" onChange={updateText} value={text} />
           </React.Fragment>
         ) : (
-          <div className="SnippetContainer">
-            <Subheading text="Select a race" />
-            <div className="ButtonsContainer">
-              {SNIPPETS.map((SNIPPET, index) => (
-                <Button
-                  className="Button"
-                  key={`button_${index.toString()}`}
-                  onClick={chooseSnippet(index)}
-                  text={`${SNIPPET.substring(0, 10)}...`}
-                />
-              ))}
-            </div>
-          </div>
+          <Start chooseSnippet={chooseSnippet} />
         )}
         {gameState.victory && (
           <div className="VictoryContainer">
