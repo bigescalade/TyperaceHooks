@@ -6,10 +6,10 @@ import Text from '../../components/Text/text';
 import './styles.css';
 
 const Play = props => {
-  const { snippet, text, updateText } = props;
+  const { snippet, text, updateText, valid } = props;
   return (
     <React.Fragment>
-      <Text text={snippet} />
+      <Text text={snippet} valid={valid} />
       <Input id="typeraceInput" onChange={updateText} value={text} />
     </React.Fragment>
   );

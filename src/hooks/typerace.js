@@ -16,6 +16,7 @@ const TyperaceHook = () => {
     endTime: null,
     isPlaying: false,
     startTime: null,
+    isValid: null,
     victory: false
   };
 
@@ -41,14 +42,28 @@ const TyperaceHook = () => {
   };
 
   const updateText = event => {
-    setText(event.target.value);
+    const { target } = event;
+    const { value } = target;
+    setText(value);
 
-    if (event.target.value === snippet) {
+    if (value === snippet) {
       setGameState({
         ...gameState,
-        victory: true,
-        endTime: new Date().getTime() - gameState.startTime
+        endTime: new Date().getTime() - gameState.startTime,
+        victory: true
       });
+    } else {
+      if (snippet.substring(0, value.length) === value) {
+        setGameState({
+          ...gameState,
+          isValid: true
+        });
+      } else {
+        setGameState({
+          ...gameState,
+          isValid: false
+        });
+      }
     }
   };
 
