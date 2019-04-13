@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '../../components/Button';
 import Subheading from '../../components/Text/subheading';
 import SNIPPETS from '../../helpers/snippets';
+
 import './styles.css';
 
 const Start = props => {

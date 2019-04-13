@@ -1,12 +1,11 @@
 import React from 'react';
 
 import Button from '../../components/Button';
-import Input from '../../components/Input';
 import Heading from '../../components/Text/heading';
-import Subheading from '../../components/Text/subheading';
 import Text from '../../components/Text/text';
 import msconverter from '../../helpers/msconverter';
-import SNIPPETS from '../../helpers/snippets';
+
+import Play from './Play';
 import Start from './Start';
 import './styles.css';
 
@@ -36,13 +35,10 @@ class Typerace extends React.Component {
           center={!gameState.isPlaying}
           text={!gameState.isPlaying ? 'Typerace' : 'START TYPING:'}
         />
-        {gameState.isPlaying ? (
-          <React.Fragment>
-            <Text text={snippet} />
-            <Input id="typeraceInput" onChange={updateText} value={text} />
-          </React.Fragment>
-        ) : (
+        {!gameState.isPlaying ? (
           <Start chooseSnippet={chooseSnippet} />
+        ) : (
+          <Play snippet={snippet} text={text} updateText={updateText} />
         )}
         {gameState.victory && (
           <div className="VictoryContainer">
